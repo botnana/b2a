@@ -1,1 +1,1 @@
-# Standard Specification
+# 規格 (Specification)

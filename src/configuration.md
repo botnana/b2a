@@ -1,1 +1,1 @@
-# Configuration
+# 設定和測試 (Configuration)
