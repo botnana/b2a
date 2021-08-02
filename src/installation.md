@@ -20,13 +20,7 @@
 
 ### 上位電腦
 
-Botnana B2A 透過 micro USB OTG 模擬的 Ethernet 接口連絡上位的工業電腦。出廠的 Ethernet IP 位址是 192.168.7.2。在 Botnana B2A 側使用了以下三種伺服器和上位電腦通訊。
-
-* HTTP 伺服器。提供網頁。預設網址為 http://192.168.7.2:3000。
-* Websocket 伺服器。預設網址為 ws://192.168.7.2:3012。提供比 HTTP 更有效率的全雙工 TCP 通訊。用於下命令給 EtherCAT 主站。命令的協定請見 Botnana Control 程式手冊。
-* SSH 伺服器。預設網址為 ssh://192.168.7.2:22。上位電腦可以以 SSH 客戶端透過此一 SSH 伺服器進入 Botnana B2A 的 Linux 系統。登入的使用者名稱是 debian，密碼是 temppwd。若上位系統為 Linux 系統，可以使用 `ssh debian@192.168.7.2` 登入。
-
-若上位系統為 Linux，不需特別處理就連上以上三個伺服器。若上位系統為 Windows，必須依本手冊後的常見問題中的說明對系統進行修改，才能以 Windows 的內建 RNDIS 驅動程式識別出 Botnana B2A。
+Botnana B2A 透過 micro USB OTG 模擬的 Ethernet 接口連絡上位的工業電腦。
 
 ### EtherCAT 從站
 
