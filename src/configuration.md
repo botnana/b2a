@@ -98,15 +98,31 @@ Botnana B2A 的 IP 地址請見本章「版本、IP 地址、開關機及更新�
 * Homing speed 2 - 回原點的第二段速度。單位為 pulse/s。
 * Homing acceleration - 回原點的加減速，單位為 pulse/s^2。
 
-
+在設好回原點的參數後，按右下方的 Start 就會開始回原點。按 Stop 就會停止並進入 Quick top active 狀態。透過 PDS goal 可以將狀態再次設為 Operation enabled，也就是 servo on。
 
 ### 驅動器 PP 模式設定及測試
 
 ![PP 模式設定](assets/configuration-pp.png)
 
+上圖是 pp 模式的頁面。當選擇 pp 模式時，在右方會出現 pp 模式的參數。說明如下，
+
+* Profile velocity - 點到點運動的速度設定。單位為 pulse/s。
+* Profile acceleration - 點到點運動的加速度。單位為 pulse/s^2。
+* Profile deceleration - 點到點運動的減速度，單位為 pulse/s^2。
+
+設好參數後，在下方的 Target position 輸入目標位置，按右下方的 Start 就會開始移動，直到 in position 停止。按 Stop 會立刻停止並進入 Quick top active 狀態。透過 PDS goal 可以將狀態再次設為 Operation enabled，也就是 servo on。
+
 ### 驅動器 PV 模式設定及測試
 
 ![PV 模式設定](assets/configuration-pv.png)
+
+上圖是 pv 模式的頁面。當選擇 pv 模式時，在右方會出現 pv 模式的參數。說明如下，
+
+* Profile velocity - 點到點運動的速度設定。單位為 pulse/s。在 pv 模式不使用。
+* Profile acceleration - 加速度。單位為 pulse/s^2。
+* Profile deceleration - 減速度，單位為 pulse/s^2。
+
+設好參數後，在下方的 Target velocity 輸入目標速度，按右下方的 Start 就會開始移動。按 Stop 會立刻停止並進入 Quick top active 狀態。透過 PDS goal 可以將狀態再次設為 Operation enabled，也就是 servo on。
 
 ## 運動控制參數設定
 
