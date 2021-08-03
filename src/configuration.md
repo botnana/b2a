@@ -139,3 +139,12 @@ TODO
 ## 版本、IP 位址、開關機及更新
 
 ![版本資訊](assets/about.png)
+
+上圖顯示的是 ABOUT 的對話窗。以下為對話窗中各元件的說明，
+
+* REBOOT 鈕 - 重開機
+* POWEROFF 鈕 - 關機
+* Version - 軟體版號
+* Update from network - 從雲端下載更新，目前暫不支援。
+* Upload manually - 手動更新軟體。請見本手冊軟體更新一章。
+* Set IP 鈕 - 設定區網網域，先在左側輸入新的區網網載，也就是 IP 的前三個數字，比如 192.168.6，按了 Set IP 鈕重開機後，新的網域會變成 192.168.6.0/24，而 Botnana B2A 的網址變成 192.168.6.2。
