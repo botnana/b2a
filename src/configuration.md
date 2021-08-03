@@ -54,9 +54,51 @@ Botnana B2A 的 IP 地址請見本章「版本、IP 地址、開關機及更新�
 
 ## 從站參數設定及測試
 
+在 CONFIGURATION 頁面可以測試從站並且進行從站的參數設定。修改參數會立刻生效。但是不會寫入 Botnana B2A 的設定檔中。要點左上方的 SAVE CONFIGURATION 按鈕才會將參數寫入設定檔中，並於下次開機進行初始設定時從設定檔讀取參數，寫入至從站。
+
+### 驅動器的參數設定以及測試
+
+![HM 模式設定](assets/configuration-hm.png)
+
+當從站為 EtherCAT 驅動器時，Botnana B2A 支援 hm、pp、pv、tq、csp、csv、cst 模式，上圖為切換到 home、也就是 hm 模式時的畫面。其中的 mode 是目前的驅動器模式。之下的 PDS Status 是目前驅動器的狀態。有以下幾種狀態：
+
+* Not ready to switch on
+* Switch on disabled
+* Ready to switch on
+* Switched on
+* Operation enabled
+* Quick stop active
+* Fault reaction active
+* Fault
+
+針對最重要的幾個狀態說明如下，
+
+* Switched on disabled - 正常開機後，驅動器會進入此狀態後等待程式下命令切換至其他狀態。
+* Operation enabled - 這是相當於傳統軸卡的 Servo on 的狀態，在此狀態下馬達被激磁。
+* Quick stop active - 這是下了緊急停止後進入的狀態。
+* Fault - 這是有異警時進入的狀態。要清除異警請按下方的 Reset Fault 按鈕。
+
+透過 PDS Status 下方的 PDS Goal 可以選擇想要進入的目標狀態，Botnana B2A 會自動切換驅動器狀態到目標狀態。不過，如果發生異警，狀態為 Fault 時，必須使用下方的 Result Fault 按鈕來清除異警，才能切換狀態。如果無法清除異警，請檢查驅動器的異警號碼並排除異警。
+
+在 PDS Goal 下方的 Digital Inputs 將驅動器的輸位輸入以十六進位顯示。請查詢驅動器手冊以瞭解每個位元對應的輸入。
+
+在 Digital Inputs 下方的 Real Position 顯示目前編碼器的數值，在 EtherCAT 文件中稱此為 Actual position。
+
+以下各節說明常用的 hm、pp、pv 模式的參數設定和測試。
+
 ### 驅動器 HM 模式設定及測試
 
 ![HM 模式設定](assets/configuration-hm.png)
+
+上圖是 hm 模式的頁面。在 B 欄中的 mode 右方一格可以選擇要使用的模式，而目前的選擇是 home，也就是 hm 模式。當選擇 hm 模式時，在右方會出現 hm 模式的參數。說明如下，
+
+* Homing method - 回原點的方式。請參考驅動器的手冊以瞭解驅動器支援的回原點方式。
+* Homing offset - 原點偏移量，單位為 pulse，也就是編碼器的刻度。
+* Homing speed 1 - 回原點的第一段速度。單位為 pulse/s。
+* Homing speed 2 - 回原點的第二段速度。單位為 pulse/s。
+* Homing acceleration - 回原點的加減速，單位為 pulse/s^2。
+
+
 
 ### 驅動器 PP 模式設定及測試
 
@@ -66,30 +108,17 @@ Botnana B2A 的 IP 地址請見本章「版本、IP 地址、開關機及更新�
 
 ![PV 模式設定](assets/configuration-pv.png)
 
-### 驅動器 TQ 模式設定及測試
-
-![TQ 模式設定](assets/configuration-tq.png)
-
-### 驅動器 CSP 模式設定及測試
-
-![CSP 模式設定](assets/configuration-csp.png)
-
-### 驅動器 CSV 模式設定及測試
-
-![CSV 模式設定](assets/configuration-csv.png)
-
-### 驅動器 CST 模式設定及測試
-
-![CST 模式設定](assets/configuration-cst.png)
-
 ## 運動控制參數設定
 
 ![運動控制參數設定](assets/motion.png)
+
+TODO
 
 ## 軸組參數設定
 
 ![軸組參數設定](assets/axis-group.png)
 
+TODO
 
 ## 版本、IP 位址、開關機及更新
 
